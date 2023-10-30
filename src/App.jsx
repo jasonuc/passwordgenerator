@@ -8,7 +8,7 @@ import './App.css'
 function App() {
 
   const [password, setPassword] = useState('Password appears here...');
-  const [passwordLength, setPasswordLength] = useState(8);
+  const [passwordLength, setPasswordLength] = useState(15);
   const [constraints, setConstraints] = useState({
     "Numbers": false, "LowerCase": false, "UpperCase": false, "Symbols (e.g. $ $ ^ & ) > < / ` \" @": false
   });

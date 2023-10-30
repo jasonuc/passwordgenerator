@@ -9,7 +9,7 @@ function Slider({ passwordLength, setPasswordLength }) {
     return (
         <li key={50} className="flex w-full h-1/5 flex-row items-center p-3 gap-x-3 bg-white even:border-b-2 even:border-t-2 first:rounded-tl-md first:rounded-tr-md last:rounded-bl-md last:rounded-br-md flex-grow justify-center">
             <p className="font-bold">Length: </p>
-            <input type="range" name="slider" max={30} min={5} defaultValue={8}  step={1} onChange={handleChange}  className="h-5 w-1/2 mx-3 p-3 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg dark:bg-gray-700 " />
+            <input type="range" name="slider" max={30} min={5} defaultValue={passwordLength}  step={1} onChange={handleChange}  className="h-5 w-1/2 mx-3 p-3 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg dark:bg-gray-700 " />
             <p className="font-extrabold italic text-slate-500">{passwordLength}</p>
         </li>
     )
