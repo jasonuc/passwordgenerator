@@ -1,7 +1,26 @@
+import { generate } from "generate-password-browser";
 
-function Generate({setPassword}) {
+function Generate({setPassword, constraints}) {
+
+    function handleClick() {
+
+        if (constraints['changed']) {
+            let newPassword = generate({
+                length: 11,
+                numbers: constraints['Numbers'],
+                uppercase: constraints['UpperCase'],
+                lowercase: constraints['LowerCase'],
+                symbols: constraints['Symbols (e.g. $ $ ^ & ) > < / ` \" @'],
+            })
+            
+            setPassword(newPassword)
+        } else {
+            alert('You have to tick some of the checkboxes')
+        }
+    }
+
     return (
-        <button className=" font-oswald uppercase font-bold tracking-wider text-white bg-blue-500 w-[10rem] h-10 rounded-sm shadow-lg hover:italic hover:text-blue-500 hover:border-blue-500 hover:border-2 hover:bg-white hover:rounded-lg" onClick={() => alert('This is an alert!')}>Generate</button>
+        <button onClick={handleClick} className=" font-oswald uppercase font-bold tracking-wider text-white bg-blue-500 w-[10rem] h-10 rounded-sm shadow-lg hover:italic hover:text-blue-500 hover:border-blue-500 hover:border-2 hover:bg-white hover:rounded-lg">Generate</button>
     )
 }
 
