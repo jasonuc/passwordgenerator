@@ -5,7 +5,7 @@ function Option({ option, key, constraints, setConstraints }) {
     function handleChange() {
         // console.log(option)
         if (constraints !== undefined && constraints !== null) {
-            setConstraints((prev) => ({ ...prev, [option]: !constraints[option] }));
+            setConstraints((prev) => ({ ...prev, [option]: !constraints[option], 'changed': true }));
             // console.log(constraints);
         }
     }
