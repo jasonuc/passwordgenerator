@@ -1,16 +1,17 @@
 import { generate } from "generate-password-browser";
 
-function Generate({setPassword, constraints}) {
+function Generate({setPassword, constraints, passwordLength}) {
 
     function handleClick() {
 
         if (constraints['changed']) {
             let newPassword = generate({
-                length: 11,
+                length: passwordLength,
                 numbers: constraints['Numbers'],
                 uppercase: constraints['UpperCase'],
                 lowercase: constraints['LowerCase'],
                 symbols: constraints['Symbols (e.g. $ $ ^ & ) > < / ` \" @'],
+                strict: true
             })
             
             setPassword(newPassword)
