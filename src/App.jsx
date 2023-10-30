@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import PasswordOptions from './components/PasswordOptions'
 import Generate from './components/Generate'
 import PasswordDisplay from './components/PasswordDisplay'
@@ -13,13 +13,12 @@ function App() {
     "Numbers": false, "LowerCase": false, "UpperCase": false, "Symbols (e.g. $ $ ^ & ) > < / ` \" @": false
   });
 
-  // useEffect()
 
   return (
     <div className='h-screen bg-slate-300 p-4 box-border flex flex-col items-center gap-y-10'>
       <h1 className=' text-3xl md:text-4xl font-oswald uppercase font-bold text-center'>Password Generator</h1>
       <PasswordOptions setConstraints={setConstraints} constraints={constraints} passwordLength={passwordLength} setPasswordLength={setPasswordLength} />
-      <Generate setPassword={setPassword} constraints={constraints}  passwordLength={passwordLength} />
+      <Generate setPassword={setPassword} constraints={constraints} passwordLength={passwordLength} />
       <PasswordDisplay password={password} />
     </div>
   )

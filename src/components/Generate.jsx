@@ -1,6 +1,6 @@
 import { generate } from "generate-password-browser";
 
-function Generate({setPassword, constraints, passwordLength}) {
+function Generate({ setPassword, constraints, passwordLength }) {
 
     function handleClick() {
 
@@ -13,7 +13,7 @@ function Generate({setPassword, constraints, passwordLength}) {
                 symbols: constraints['Symbols (e.g. $ $ ^ & ) > < / ` \" @'],
                 strict: true
             })
-            
+
             setPassword(newPassword)
         } else {
             alert('You have to tick some of the checkboxes')
