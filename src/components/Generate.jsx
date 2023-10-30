@@ -16,7 +16,7 @@ function Generate({ setPassword, constraints, passwordLength }) {
 
             setPassword(newPassword)
         } else {
-            alert('You have to tick some of the checkboxes')
+            alert('⚠️ You have to tick some of the Password options.\n💡 This allows the website to know what type of password you want!')
         }
     }
 
